@@ -1,0 +1,8 @@
+{
+  "name": "Honda Ayu Fatmawati",
+  "description": "Dealer Resmi Honda Ayu Fatmawati. Dapatkan promo mobil Honda terbaru, DP ringan, dan cicilan murah di Jakarta Selatan.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <script>
+      // Fix for "Cannot set property fetch of #<Window> which has only a getter"
+      // This happens when a polyfill tries to override a read-only fetch property.
+      if (typeof window !== 'undefined') {
+        const originalFetch = window.fetch;
+        try {
+          Object.defineProperty(window, 'fetch', {
+            get: () => originalFetch,
+            set: () => { console.warn('Ignored attempt to override window.fetch'); },
+            configurable: true
+          });
+        } catch (e) {
+          console.error('Could not redefine fetch:', e);
+        }
+      }
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Honda Ayu Fatmawati - Dealer Resmi Honda Jakarta Selatan | Promo Terbaik</title>
+    <meta name="description" content="Dapatkan promo mobil Honda terbaik di Jakarta Selatan bersama Honda Ayu Fatmawati. DP rendah, cicilan ringan, dan proses cepat untuk HR-V, BR-V, Brio, dan lainnya." />
+    <meta name="keywords" content="Honda Ayu Fatmawati, dealer honda fatmawati, sales honda fatmawati, promo honda jakarta selatan, honda hrv fatmawati" />
+    <link rel="canonical" href="https://honda-ayu-fatmawati.com" />
+    
+    <!-- JSON-LD Structured Data for Local Business -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "AutoDealer",
+        "name": "Honda Ayu Fatmawati",
+        "image": "https://images.unsplash.com/photo-1567818735868-e71b99932e29?auto=format&fit=crop&q=80&w=600",
+        "@id": "",
+        "url": "https://honda-ayu-fatmawati.com",
+        "telephone": "+6281234567890",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Jl. RS. Fatmawati Raya",
+          "addressLocality": "Jakarta Selatan",
+          "postalCode": "12430",
+          "addressCountry": "ID"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": -6.2847,
+          "longitude": 106.7932
+        },
+        "openingHoursSpecification": {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
+            "Saturday",
+            "Sunday"
+          ],
+          "opens": "08:00",
+          "closes": "20:00"
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+
